@@ -9,4 +9,8 @@ sales = as.data.table(mtcars)[,.(
     promo = vs
 )]
 
+sales[retailer == 1,
+      promo := 0
+      ]
+
 print(sales[, mean(promo*sales)])
