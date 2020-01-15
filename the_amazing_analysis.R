@@ -9,7 +9,7 @@ sales = as.data.table(mtcars)[,.(
     promo = vs
 )]
 
-sales[retailer == 1,
+sales[retailer %in% c(1,3,4,5),
       promo := 0
       ]
 
