@@ -9,11 +9,13 @@ sales = as.data.table(mtcars)[,.(
     promo = vs
 )]
 
-sales[
-    retailer %in% c(1,3,4),
-    promo := 0
-    ][
-        promo_sales := sales / promo
-        ]
-
-print(sales[, mean(promo_sales, na.rm = T)])
+print(
+    sales[,
+          retailer %in% c(1,3,4),
+          promo := 0
+          ][
+              promo_sales := sales / promo
+              ][,
+                mean(promo_sales, na.rm = T)
+                ]
+)
