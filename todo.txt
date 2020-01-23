@@ -1,0 +1,14 @@
+add-commit-push-pull loop
+log, status
+
+commit --amend
+reset/revert
+- hard, soft, mixed
+
+checkout
+
+branching and merges
+
+rebase
+
+bisect
