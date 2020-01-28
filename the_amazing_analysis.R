@@ -11,7 +11,7 @@ sales = as.data.table(mtcars)[,.(
 
 print(
     sales[,
-          retailer %in% c(1,3,4),
+          retailer %in% c(1,3,4,5),
           promo := 0
           ][
               promo_sales := sales / promo
